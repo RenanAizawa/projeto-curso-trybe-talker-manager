@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const testTalker = require('./middlewares/testTalker');
+const idTalker = require('./middlewares/idTalker');
 
 const app = express();
 
@@ -14,6 +15,8 @@ app.get('/talker', testTalker);
 app.get('/', (_request, response) => {
   response.status(HTTP_OK_STATUS).send();
 });
+
+app.get('/talker/:id', idTalker);
 
 app.listen(PORT, () => {
   console.log('Online');
