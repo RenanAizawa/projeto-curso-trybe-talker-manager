@@ -30,12 +30,11 @@ const PORT = '3000';
 app.get('/', (_request, response) => {
   response.status(HTTP_OK_STATUS).send();
 });
+app.get('/talker/search', token, searchName);
 
 app.get('/talker', testTalker);
 
 app.post('/talker', token, nameV, ageV, talkV, watchedAtV, rateV, rateV2, newTalker);
-
-app.get('/talker/search', token, searchName);
 
 app.get('/talker/:id', idTalker);
 
