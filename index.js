@@ -6,7 +6,15 @@ const login = require('./middlewares/login');
 const testEmail = require('./middlewares/testEmail');
 const testPassword = require('./middlewares/testPassword');
 const newTalker = require('./middlewares/newTalker');
-const { token } = require('./middlewares/testNewTalker');
+const {
+  token,
+  nameV,
+  ageV,
+  talkV,
+  watchedAtV,
+  rateV,
+  rateV2,
+} = require('./middlewares/testNewTalker');
 
 const app = express();
 
@@ -22,7 +30,7 @@ app.get('/', (_request, response) => {
 
 app.get('/talker', testTalker);
 
-app.post('/talker', token, newTalker);
+app.post('/talker', token, nameV, ageV, talkV, watchedAtV, rateV, rateV2, newTalker);
 
 app.get('/talker/:id', idTalker);
 
