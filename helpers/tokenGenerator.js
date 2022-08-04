@@ -10,3 +10,6 @@ function generateToken(length) {
 }
 
 module.exports = generateToken;
+
+// este gerador de token foi encontrado no site: https://stackoverflow.com/questions/8532406/create-a-random-token-in-javascript-based-on-user-details , no comentario do usuario: https://stackoverflow.com/users/2151420/kareem ; 
+// Assim deixo meu agradecimento e reconhecimento.
