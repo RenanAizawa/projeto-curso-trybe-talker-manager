@@ -15,6 +15,7 @@ const {
   rateV,
   rateV2,
 } = require('./middlewares/testNewTalker');
+const alterTalker = require('./middlewares/alterTalker');
 
 const app = express();
 
@@ -33,6 +34,10 @@ app.get('/talker', testTalker);
 app.post('/talker', token, nameV, ageV, talkV, watchedAtV, rateV, rateV2, newTalker);
 
 app.get('/talker/:id', idTalker);
+
+app.put('/talker/:id', token, nameV, ageV, talkV, watchedAtV, rateV, rateV2, alterTalker);
+
+app.delete('/talker/:id');
 
 app.post('/login', testEmail, testPassword, login);
 

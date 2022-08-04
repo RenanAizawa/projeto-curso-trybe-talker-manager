@@ -77,7 +77,7 @@ function watchedAtV(req, res, next) {
 function rateV(req, res, next) {
   try {
     const { talk: { rate } } = req.body;
-    if (!rate || rate.length === 0) {
+    if (rate === undefined || rate === '') {
       return res.status(400).json({ message: 'O campo "rate" é obrigatório' });
     }
     return next();
